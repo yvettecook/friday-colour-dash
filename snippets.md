@@ -25,3 +25,23 @@ in html:
 
 
   https://www.googleapis.com/customsearch/v1?key=AIzaSyB9qMYwsnHtfsu3ZfPgVE4K6YekbUYHKKY&cx=017576662512468239146:omuauf_lfve&q=lectures
+
+  https://www.googleapis.com/customsearch/v1?key=AIzaSyB9qMYwsnHtfsu3ZfPgVE4K6YekbUYHKKY&cx=017576662512468239146:omuauf_lfve&q=flower&imgSize=small
+
+
+  imgDominantColor	string	Returns images of a specific dominant color.
+
+  Acceptable values are:
+  "black": black
+  "blue": blue
+  "brown": brown
+  "gray": gray
+  "green": green
+  "pink": pink
+  "purple": purple
+  "teal": teal
+  "white": white
+  "yellow": yellow
+
+
+  https://www.googleapis.com/customsearch/v1?key=AIzaSyB9qMYwsnHtfsu3ZfPgVE4K6YekbUYHKKY&cx=012986436070255057372:htg6wyihnie&q=happiness&imgDominantColor=pink
