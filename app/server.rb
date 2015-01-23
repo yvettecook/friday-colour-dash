@@ -24,9 +24,7 @@ post '/' do
   session[:second_result] = get_second_json_results(json)
   session[:colour] = @search.colour
   session[:noun] = @search.noun
-  # puts "***"
-  # puts get_json_results(json)
-  # puts "***"
+  session[:first_search] ||= create_search_record(@search.colour, @search.noun, search_term)
   redirect to '/result'
 end
 
@@ -35,7 +33,10 @@ get '/result' do
   @second_result_address = session[:second_result]
   @colour = session[:colour]
   @noun = session[:noun]
-  @test = "http://www.w3schools.com/images/w3logotest2.png"
+  @first_search_details = session[:first_search]
+  puts "***"
+  puts session[:first_search]
+  puts "***"
   erb :result
 end
 
@@ -46,4 +47,13 @@ end
 
 def get_second_json_results(json)
   first_result = json["items"][1]["pagemap"]["cse_image"][0]["src"]
+end
+
+def create_search_record(colour, noun, query)
+  last_search = Hash.new
+  last_search["colour"] = colour
+  last_search["noun"] = noun
+  last_search["query"] = query
+  last_search["time"] = Time.now
+  return last_search
 end

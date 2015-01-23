@@ -1,8 +1,21 @@
-<p>Colour: <%= @colour %></p>
-<p>Noun: <%= @noun %></p>
+<h1>Colour: <%= @colour %></h1>
+<h2>Noun: <%= @noun %></h2>
 
-<p> First result:</p>
-<a href="<%= @first_result_address %>"><img src="<%= @first_result_address %>" height="100" ></a>
+<div>
+  <p> First result:</p>
+  <a href="<%= @first_result_address %>"><img src="<%= @first_result_address %>" height="100" ></a>
+  <p> Second result:</p>
+  <img src="<%= @second_result_address %>" height="100" ></a>
+</div>
 
-<p> Second result:</p>
-<img src="<%= @second_result_address %>" height="100" ></a>
+<div>
+  <a href="/">Search again?</a>
+</div>
+
+<h1> Previous searches: </h1>
+First:
+<ul>
+ <li>Colour: <%= @first_search_details["colour"] %></li>
+ <li>Noun: <%= @first_search_details["noun"] %></li>
+ <li>Time: <%= @first_search_details["time"] %></li>
+</ul>
