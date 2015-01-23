@@ -1,11 +1,11 @@
 class Search
 
-  attr_reader :colour, :noun_choice
+  attr_reader :colour, :noun
   attr_accessor :search_results
 
   def initialize(colour)
     @colour = colour
-    @noun = ["happiness"].sample
+    @noun = ["man", "mountain", "state", "ocean", "country", "building", "cat", "airline", "wealth", "happiness", "pride", "fear", "religion", "bird", "book", "phone", "rice", "snow", "water"].sample
     @search_result = []
   end
 

@@ -21,6 +21,8 @@ post '/' do
   response = Faraday.get(search_term)
   json = JSON.parse(response.body)
   session[:first_result] = get_json_results(json)
+  session[:colour] = @search.colour
+  session[:noun] = @search.noun
   # puts "***"
   # puts get_json_results(json)
   # puts "***"
@@ -29,6 +31,8 @@ end
 
 get '/result' do
   @first_result_address = session[:first_result]
+  @colour = session[:colour]
+  @noun = session[:noun]
   @test = "http://www.w3schools.com/images/w3logotest2.png"
   erb :result
 end
