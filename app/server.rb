@@ -1,19 +1,24 @@
 require 'sinatra'
 require 'sinatra/partial'
+require './models/search'
 
 set :partial_template_engine, :erb
 set :public_folder, Proc.new { File.join(root, '..', 'public') }
 
 get '/' do
-  @color = params[:colour]
   erb :index
 end
 
 post '/' do
-  @search = Search.new(params)
+  @color = params[:colour]
+  @search = Search.new("red")
+  puts "***"
+  puts @search.inspect
+  puts "***"
   redirect to '/result'
 end
 
 get '/result' do
-    puts @search
+  
+  erb :result
 end
